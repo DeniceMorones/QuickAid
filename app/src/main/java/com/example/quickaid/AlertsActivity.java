@@ -1,7 +1,6 @@
 package com.example.quickaid;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -135,13 +134,13 @@ public class AlertsActivity extends AppCompatActivity {
 
     private static class AlertItem {
         String title;
-        int colorResId;
+        int backgroundResId; // Ahora almacena el R.drawable ID del fondo
         int iconResId;
         List<String> tips;
 
-        public AlertItem(String title, int colorResId, int iconResId, List<String> tips) {
+        public AlertItem(String title, int backgroundResId, int iconResId, List<String> tips) {
             this.title = title;
-            this.colorResId = colorResId;
+            this.backgroundResId = backgroundResId;
             this.iconResId = iconResId;
             this.tips = tips;
         }
@@ -169,7 +168,8 @@ public class AlertsActivity extends AppCompatActivity {
             holder.title.setText(alert.title);
             holder.icon.setImageResource(alert.iconResId);
 
-            holder.contentLayout.setBackgroundColor(ContextCompat.getColor(holder.itemView.getContext(), alert.colorResId));
+            // CORRECCIÓN CLAVE: Usamos setBackgroundResource() para drawables/gradients
+            holder.contentLayout.setBackgroundResource(alert.backgroundResId);
 
             holder.bulletContainer.removeAllViews();
             Context context = holder.itemView.getContext();
