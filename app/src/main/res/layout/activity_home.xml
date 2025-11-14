@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -23,7 +24,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardBackgroundColor="@color/card_background_light"
+
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +82,6 @@
             android:layout_width="0dp"
             android:layout_height="180dp"
             android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/card_background_teal"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +113,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="Te guía con pasos sencillos para salvar vidas en momentos críticos."
-                    android:textColor="@color/white_alpha"
+                    android:textColor="@color/white"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toStartOf="@id/image_prevenir_placeholder"
                     app:layout_constraintStart_toStartOf="parent"
@@ -129,10 +129,11 @@
                     android:background="@drawable/rounded_button_light"
                     android:text="Leer más"
                     android:textAllCaps="false"
-                    android:textColor="@color/text_teal"
+                    android:textColor="@color/green"
                     android:textSize="14sp"
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"
+                    app:backgroundTint="@null"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/desc_prevenir" />
 
@@ -156,7 +157,6 @@
             android:layout_width="0dp"
             android:layout_height="180dp"
             android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/card_background_light_teal"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -171,16 +171,16 @@
 
                 <TextView
                     android:id="@+id/title_procedimientos"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="226dp"
+                    android:layout_height="51dp"
                     android:text="Procedimientos básicos"
                     android:textColor="#FFFFFF"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/image_procedimientos_placeholder"
-                    app:layout_constraintHorizontal_bias="0"/>
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/desc_procedimientos"
@@ -188,7 +188,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="Accede a guías de RCP, hemorragias, Heimlich, fracturas y más."
-                    android:textColor="@color/white_alpha"
+                    android:textColor="@color/white"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toStartOf="@id/image_procedimientos_placeholder"
                     app:layout_constraintStart_toStartOf="parent"
@@ -204,10 +204,11 @@
                     android:background="@drawable/rounded_button_light"
                     android:text="Leer más"
                     android:textAllCaps="false"
-                    android:textColor="@color/text_light_teal"
+                    android:textColor="@color/green"
                     android:textSize="14sp"
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"
+                    app:backgroundTint="@null"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/desc_procedimientos" />
 
@@ -231,7 +232,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="Protección en cualquier lugar, cualquier momento"
-            android:textColor="@color/white_alpha"
+            android:textColor="@color/green"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -254,11 +255,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginEnd="8dp"
-                app:cardBackgroundColor="@color/card_background_dark"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_offline_card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
@@ -268,10 +269,9 @@
                         android:id="@+id/icon_offline"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
-                        android:src="@drawable/ic_wifi_off"
+                        android:src="@drawable/no_wifi_alert"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:tint="@color/text_light_gray"/>
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/title_offline"
@@ -291,7 +291,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:text="Accede a guías de emergencia incluso sin conexión"
-                        android:textColor="@color/text_light_gray"
+                        android:textColor="@color/green"
                         android:textSize="12sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -307,11 +307,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="8dp"
-                app:cardBackgroundColor="@color/card_background_dark"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_alertas_card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
@@ -321,10 +321,9 @@
                         android:id="@+id/icon_alertas"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
-                        android:src="@drawable/ic_bell"
+                        android:src="@drawable/bell_alert"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:tint="@color/text_light_gray"/>
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/title_alertas"
@@ -344,7 +343,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:text="Recibe avisos y recomendaciones según tu región y temporada"
-                        android:textColor="@color/text_light_gray"
+                        android:textColor="@color/green"
                         android:textSize="12sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuickAid">
         <activity
-            android:name=".activity_splash"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity_home"
+            android:name=".HomeActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".PreventActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".OfflineActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".ProcedimientosActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".AlertsActivity"
             android:exported="true">
         </activity>
 
