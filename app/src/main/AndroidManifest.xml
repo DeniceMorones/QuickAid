@@ -40,6 +40,14 @@
             android:name=".AlertsActivity"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".InfografiasActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".ImageDetailActivity"
+            android:exported="true">
+        </activity>
 
     </application>
 

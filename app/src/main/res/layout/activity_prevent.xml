@@ -92,7 +92,7 @@
                         android:background="@drawable/rounded_button_light"
                         android:paddingStart="16dp"
                         android:paddingEnd="16dp"
-                        android:text="Leer más"
+                        android:text="Ver más"
                         android:textAllCaps="false"
                         android:textColor="@color/green"
                         android:textSize="14sp"
@@ -131,7 +131,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="La OMS define la promoción de la salud como un proceso que permite a las personas aumentar el control sobre su salud y mejorarla, implica acciones dirigidas a fortalecer las habilidades y capacidades de los individuos y de las comunidades, así como modificar las condiciones sociales, ambientales y económicas para favorecer la salud."
+                        android:text="La prevención de las Enfermedades No Transmisibles (ENT) se centra en la adopción de estilos de vida saludables. Esto incluye la eliminación del consumo de tabaco, la realización de actividad física constante, la limitación del consumo nocivo de alcohol y la implementación de una dieta nutritiva. Estas acciones son clave para reducir la mortalidad prematura por padecimientos crónicos como enfermedades cardiovasculares y diabetes."
                         android:textColor="@color/green"
                         android:textSize="14sp" />
 
@@ -142,11 +142,11 @@
                         android:background="@drawable/rounded_button_light"
                         android:paddingStart="16dp"
                         android:paddingEnd="16dp"
-                        android:text="Leer más"
+                        android:text="Ver más"
                         android:textAllCaps="false"
                         android:textColor="@color/green"
                         android:textSize="14sp"
-                        app:backgroundTint="@null"/>
+                        app:backgroundTint="@null" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -181,7 +181,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="La OMS define la promoción de la salud como un proceso que permite a las personas aumentar el control sobre su salud y mejorarla, implica acciones dirigidas a fortalecer las habilidades y capacidades de los individuos y de las comunidades, así como modificar las condiciones sociales, ambientales y económicas para favorecer la salud."
+                        android:text="El Control de Infecciones (C.I.) se define como un conjunto de prácticas y procedimientos basados en la evidencia que permite al personal de salud y a la comunidad prevenir la transmisión de agentes infecciosos y reducir la aparición de enfermedades. Implica la aplicación rigurosa de protocolos de higiene y bioseguridad, el fortalecimiento de las capacidades individuales y sistémicas, y la modificación de los entornos asistenciales para asegurar la protección de pacientes y trabajadores."
                         android:textColor="@color/green"
                         android:textSize="14sp" />
 
@@ -192,11 +192,11 @@
                         android:background="@drawable/rounded_button_light"
                         android:paddingStart="16dp"
                         android:paddingEnd="16dp"
-                        android:text="Leer más"
+                        android:text="Ver más"
                         android:textAllCaps="false"
                         android:textColor="@color/green"
                         android:textSize="14sp"
-                        app:backgroundTint="@null"/>
+                        app:backgroundTint="@null" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

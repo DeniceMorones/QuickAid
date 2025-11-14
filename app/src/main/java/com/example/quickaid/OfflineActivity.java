@@ -1,7 +1,9 @@
 package com.example.quickaid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
@@ -18,9 +20,7 @@ public class OfflineActivity extends AppCompatActivity {
 
         EdgeToEdge.enable(this);
 
-
         setContentView(R.layout.activity_offline);
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main_layout_offline), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -28,14 +28,23 @@ public class OfflineActivity extends AppCompatActivity {
             return insets;
         });
 
-
         ImageButton backButton = findViewById(R.id.btn_back);
-
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // Termina la actividad actual y regresa a la anterior.
                 finish();
+            }
+        });
+
+
+        Button infografiasButton = findViewById(R.id.btn_ver_infografias);
+
+        infografiasButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OfflineActivity.this, InfografiasActivity.class);
+                startActivity(intent);
             }
         });
     }
