@@ -47,7 +47,7 @@ public class AlertsActivity extends AppCompatActivity {
 
         Button btnEmergency = findViewById(R.id.btn_emergencia);
         btnEmergency.setOnClickListener(v -> {
-            // Lógica de emergencia aquí
+
         });
 
         alerts = getAlertsData();
@@ -134,7 +134,7 @@ public class AlertsActivity extends AppCompatActivity {
 
     private static class AlertItem {
         String title;
-        int backgroundResId; // Ahora almacena el R.drawable ID del fondo
+        int backgroundResId;
         int iconResId;
         List<String> tips;
 
@@ -168,7 +168,6 @@ public class AlertsActivity extends AppCompatActivity {
             holder.title.setText(alert.title);
             holder.icon.setImageResource(alert.iconResId);
 
-            // CORRECCIÓN CLAVE: Usamos setBackgroundResource() para drawables/gradients
             holder.contentLayout.setBackgroundResource(alert.backgroundResId);
 
             holder.bulletContainer.removeAllViews();
