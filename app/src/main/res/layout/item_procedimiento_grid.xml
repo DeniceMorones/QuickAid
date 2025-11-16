@@ -17,7 +17,6 @@
         app:cardElevation="0dp"
         app:cardBackgroundColor="#FFFFFF">
 
-        <!-- Contenedor para el icono, se recomienda un tamaño fijo -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="80dp"

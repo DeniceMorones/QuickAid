@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- Directorio donde se guardan los archivos descargados.
+         getExternalFilesDir(null) corresponde a la ruta 'external-files-path name="pdfs"'
+         en el contexto de nuestra aplicación.
+    -->
+    <external-files-path name="pdfs" path="."/>
+</paths>

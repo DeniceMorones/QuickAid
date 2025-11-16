@@ -8,7 +8,6 @@
     android:background="@color/white"
     tools:context=".AlertsActivity">
 
-    <!-- Header con Flecha de Retroceso y Título -->
     <ImageButton
         android:id="@+id/btn_back"
         android:layout_width="wrap_content"
@@ -55,7 +54,6 @@
             android:paddingStart="16dp"
             android:paddingEnd="16dp">
 
-            <!-- CardView: Alerta de Emergencia (Similar a otras pantallas) -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_emergencia"
                 android:layout_width="match_parent"
@@ -64,7 +62,9 @@
                 android:layout_marginBottom="16dp"
                 app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                app:cardElevation="4dp"
+                android:clickable="true"
+                android:focusable="true">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -128,7 +128,6 @@
                 android:textSize="18sp"
                 android:textStyle="bold"/>
 
-            <!-- ViewPager2 para Carrusel de Alertas -->
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/view_pager_alerts"
                 android:layout_width="match_parent"
@@ -139,7 +138,6 @@
                 android:paddingEnd="0dp"
                 android:overScrollMode="never" />
 
-            <!-- Indicadores de página (Dots) -->
             <LinearLayout
                 android:id="@+id/layout_dots"
                 android:layout_width="wrap_content"
@@ -147,7 +145,6 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
                 android:orientation="horizontal">
-                <!-- Los puntos se agregarán dinámicamente en Java -->
             </LinearLayout>
 
         </LinearLayout>

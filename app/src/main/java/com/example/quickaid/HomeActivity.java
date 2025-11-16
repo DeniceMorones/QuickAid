@@ -1,10 +1,11 @@
 package com.example.quickaid;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
+import android.widget.ImageView; // Importar ImageView
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -26,6 +27,49 @@ public class HomeActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        // 1. Encontrar la CardView o el elemento que contiene el botón y la sirena.
+        // En el XML, el botón tiene el ID: btn_emergencia.
+        // La imagen de la sirena tiene el ID: icon_sirena.
+        // Lo más seguro es usar el botón que ya tiene el estilo de "TOCA EL BOTÓN".
+        Button btnEmergencia = findViewById(R.id.btn_emergencia);
+
+        // 2. Definir el listener para el botón de emergencia
+        btnEmergencia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // El número de emergencia
+                String numeroEmergencia = "911";
+
+                // Crea un Intent con la acción ACTION_DIAL
+                // La URI "tel:911" indica que el sistema debe abrir el marcador con el número 911.
+                Intent intentLlamada = new Intent(Intent.ACTION_DIAL);
+                intentLlamada.setData(Uri.parse("tel:" + numeroEmergencia));
+
+                // Inicia la actividad
+                startActivity(intentLlamada);
+            }
+        });
+
+        // --- INICIO DE LISTENERS EXISTENTES ---
+
+        // Se usa la imagen de la sirena para que también funcione al darle clic a la imagen.
+        ImageView iconSirena = findViewById(R.id.icon_sirena);
+        iconSirena.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // El número de emergencia
+                String numeroEmergencia = "911";
+
+                // Crea un Intent con la acción ACTION_DIAL
+                // La URI "tel:911" indica que el sistema debe abrir el marcador con el número 911.
+                Intent intentLlamada = new Intent(Intent.ACTION_DIAL);
+                intentLlamada.setData(Uri.parse("tel:" + numeroEmergencia));
+
+                // Inicia la actividad
+                startActivity(intentLlamada);
+            }
         });
 
 

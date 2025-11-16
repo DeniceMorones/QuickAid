@@ -1,6 +1,8 @@
 package com.example.quickaid;
 
 import android.content.Context;
+import android.content.Intent; // Importar Intent
+import android.net.Uri; // Importar Uri
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,7 @@ import android.widget.Button;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView; // Importar CardView
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -45,10 +48,30 @@ public class AlertsActivity extends AppCompatActivity {
         ImageButton backButton = findViewById(R.id.btn_back);
         backButton.setOnClickListener(v -> finish());
 
+        // Identificar el botón y la CardView del módulo de emergencia
         Button btnEmergency = findViewById(R.id.btn_emergencia);
-        btnEmergency.setOnClickListener(v -> {
+        CardView cardEmergency = findViewById(R.id.card_emergencia);
 
-        });
+        // --- LÓGICA DE LLAMADA DE EMERGENCIA (Añadida o modificada) ---
+        View.OnClickListener emergencyCallListener = v -> {
+            String numeroEmergencia = "911";
+
+            // Crea un Intent con la acción ACTION_DIAL
+            // Esto abrirá la aplicación de teléfono con el 911 precargado,
+            // permitiendo al usuario presionar 'llamar'.
+            Intent intentLlamada = new Intent(Intent.ACTION_DIAL);
+            intentLlamada.setData(Uri.parse("tel:" + numeroEmergencia));
+
+            startActivity(intentLlamada);
+        };
+
+        // Asignar el listener al botón "TOCA EL BOTÓN"
+        btnEmergency.setOnClickListener(emergencyCallListener);
+
+        // Opcional: Asignar el listener a la CardView completa para una zona de toque más amplia
+        cardEmergency.setOnClickListener(emergencyCallListener);
+        // --- FIN LÓGICA DE LLAMADA DE EMERGENCIA ---
+
 
         alerts = getAlertsData();
 
@@ -124,10 +147,12 @@ public class AlertsActivity extends AppCompatActivity {
         int count = dotsLayout.getChildCount();
         for (int i = 0; i < count; i++) {
             ImageView dot = (ImageView) dotsLayout.getChildAt(i);
+            // Nota: Se asume que tienes dos drawables, uno para seleccionado y otro para no seleccionado
+            // En este código se usa el mismo, si tienes colores diferentes, ajusta aquí.
             if (i == position) {
-                dot.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.dot_bullet));
+                dot.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.dot_bullet)); // Asume que existe dot_bullet_selected
             } else {
-                dot.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.dot_bullet));
+                dot.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.dot_bullet)); // Asume que existe dot_bullet_unselected
             }
         }
     }
@@ -179,6 +204,7 @@ public class AlertsActivity extends AppCompatActivity {
                 bulletText.setText(tip);
                 bulletText.setTextColor(whiteColor);
                 bulletText.setTextSize(14);
+                // Nota: Asumo que R.drawable.dot_bullet es el punto/bullet.
                 bulletText.setCompoundDrawablesWithIntrinsicBounds(R.drawable.dot_bullet, 0, 0, 0);
                 bulletText.setCompoundDrawablePadding(16);
                 bulletText.setPadding(0, 0, 0, 8);
