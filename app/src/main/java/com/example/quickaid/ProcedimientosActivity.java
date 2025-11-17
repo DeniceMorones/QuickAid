@@ -19,7 +19,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class ProcedimientosActivity extends AppCompatActivity {
 
-    // --- Constantes de URL para los procedimientos de primeros auxilios ---
+
     private static final String URL_RCP = "https://www.youtube.com/watch?v=wvKxIlDsLW4";
     private static final String URL_HEMORRAGIAS = "https://www.youtube.com/watch?v=Bno4pGX4FcE";
     private static final String URL_HEIMLICH = "https://www.youtube.com/watch?v=lsrrkUnf_JM";
@@ -51,33 +51,29 @@ public class ProcedimientosActivity extends AppCompatActivity {
             }
         });
 
-        // --- LÓGICA DE LLAMADA DE EMERGENCIA ---
+
         CardView cardOfflineEmergencia = findViewById(R.id.card_offline_emergencia);
         Button btnOfflineEmergencia = findViewById(R.id.btn_offline_emergencia);
 
         View.OnClickListener emergencyCallListener = v -> {
             String numeroEmergencia = "911";
 
-            // Crea un Intent con la acción ACTION_DIAL
+
             Intent intentLlamada = new Intent(Intent.ACTION_DIAL);
             intentLlamada.setData(Uri.parse("tel:" + numeroEmergencia));
 
             startActivity(intentLlamada);
         };
 
-        // Asignar el listener al botón "TOCA EL BOTÓN"
         if (btnOfflineEmergencia != null) {
             btnOfflineEmergencia.setOnClickListener(emergencyCallListener);
         }
 
-        // Asignar el listener a la CardView contenedora
         if (cardOfflineEmergencia != null) {
             cardOfflineEmergencia.setOnClickListener(emergencyCallListener);
         }
-        // --- FIN LÓGICA DE LLAMADA DE EMERGENCIA ---
 
 
-        // --- Configuración de los ítems de la parrilla con sus URL ---
         setupGridItem(R.id.procedimiento_rcp, R.drawable.icon_rcp, "RCP", URL_RCP);
         setupGridItem(R.id.procedimiento_hemorragias, R.drawable.icon_hemorragias, "Control de\nhemorragias", URL_HEMORRAGIAS);
         setupGridItem(R.id.procedimiento_heimlich, R.drawable.icon_heimlich, "Maniobra de\nHeimlich", URL_HEIMLICH);
@@ -87,13 +83,7 @@ public class ProcedimientosActivity extends AppCompatActivity {
     }
 
 
-    /**
-     * Configura el ítem de la parrilla y asigna el OnClickListener para abrir la URL.
-     * @param includeLayoutId ID del layout incluido (ej. R.id.procedimiento_rcp)
-     * @param drawableId ID del recurso drawable para el icono.
-     * @param textContent Texto a mostrar en el ítem.
-     * @param url Enlace web a abrir al hacer clic.
-     */
+
     private void setupGridItem(int includeLayoutId, int drawableId, String textContent, String url) {
         View includedLayout = findViewById(includeLayoutId);
 
@@ -114,16 +104,12 @@ public class ProcedimientosActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Abre un enlace web en el navegador predeterminado del dispositivo.
-     * @param url La URL que se desea abrir.
-     */
+
     private void openUrl(String url) {
         try {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             startActivity(browserIntent);
         } catch (Exception e) {
-            // Manejar la excepción si no hay un navegador disponible.
             e.printStackTrace();
         }
     }

@@ -28,7 +28,7 @@ public class ImageDetailActivity extends AppCompatActivity {
         ImageButton closeButton = findViewById(R.id.btn_close_detail);
 
         closeButton.setOnClickListener(v -> finish());
-        // -----------------------------------------------------
+
 
         if (infografiaId != null && !infografiaId.isEmpty()) {
             int imageResId = getResources().getIdentifier(infografiaId, "drawable", getPackageName());

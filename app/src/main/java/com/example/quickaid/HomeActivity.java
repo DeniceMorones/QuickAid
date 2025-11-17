@@ -29,13 +29,10 @@ public class HomeActivity extends AppCompatActivity {
             return insets;
         });
 
-        // 1. Encontrar la CardView o el elemento que contiene el botón y la sirena.
-        // En el XML, el botón tiene el ID: btn_emergencia.
-        // La imagen de la sirena tiene el ID: icon_sirena.
-        // Lo más seguro es usar el botón que ya tiene el estilo de "TOCA EL BOTÓN".
+
         Button btnEmergencia = findViewById(R.id.btn_emergencia);
 
-        // 2. Definir el listener para el botón de emergencia
+
         btnEmergencia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

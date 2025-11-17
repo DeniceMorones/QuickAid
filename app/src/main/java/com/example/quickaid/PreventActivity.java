@@ -86,7 +86,7 @@ public class PreventActivity extends AppCompatActivity {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             startActivity(browserIntent);
         } catch (Exception e) {
-            // Manejar la excepción si no hay un navegador disponible.
+
             e.printStackTrace();
         }
     }
