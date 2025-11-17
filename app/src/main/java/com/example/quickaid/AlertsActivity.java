@@ -48,29 +48,27 @@ public class AlertsActivity extends AppCompatActivity {
         ImageButton backButton = findViewById(R.id.btn_back);
         backButton.setOnClickListener(v -> finish());
 
-        // Identificar el botón y la CardView del módulo de emergencia
+
         Button btnEmergency = findViewById(R.id.btn_emergencia);
         CardView cardEmergency = findViewById(R.id.card_emergencia);
 
-        // --- LÓGICA DE LLAMADA DE EMERGENCIA (Añadida o modificada) ---
+
         View.OnClickListener emergencyCallListener = v -> {
             String numeroEmergencia = "911";
 
-            // Crea un Intent con la acción ACTION_DIAL
-            // Esto abrirá la aplicación de teléfono con el 911 precargado,
-            // permitiendo al usuario presionar 'llamar'.
+            /
             Intent intentLlamada = new Intent(Intent.ACTION_DIAL);
             intentLlamada.setData(Uri.parse("tel:" + numeroEmergencia));
 
             startActivity(intentLlamada);
         };
 
-        // Asignar el listener al botón "TOCA EL BOTÓN"
+
         btnEmergency.setOnClickListener(emergencyCallListener);
 
-        // Opcional: Asignar el listener a la CardView completa para una zona de toque más amplia
+
         cardEmergency.setOnClickListener(emergencyCallListener);
-        // --- FIN LÓGICA DE LLAMADA DE EMERGENCIA ---
+
 
 
         alerts = getAlertsData();
@@ -147,8 +145,7 @@ public class AlertsActivity extends AppCompatActivity {
         int count = dotsLayout.getChildCount();
         for (int i = 0; i < count; i++) {
             ImageView dot = (ImageView) dotsLayout.getChildAt(i);
-            // Nota: Se asume que tienes dos drawables, uno para seleccionado y otro para no seleccionado
-            // En este código se usa el mismo, si tienes colores diferentes, ajusta aquí.
+
             if (i == position) {
                 dot.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.dot_bullet)); // Asume que existe dot_bullet_selected
             } else {
