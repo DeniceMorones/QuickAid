@@ -56,7 +56,7 @@ public class AlertsActivity extends AppCompatActivity {
         View.OnClickListener emergencyCallListener = v -> {
             String numeroEmergencia = "911";
 
-            /
+
             Intent intentLlamada = new Intent(Intent.ACTION_DIAL);
             intentLlamada.setData(Uri.parse("tel:" + numeroEmergencia));
 

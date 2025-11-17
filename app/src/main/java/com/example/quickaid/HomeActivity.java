@@ -39,22 +39,18 @@ public class HomeActivity extends AppCompatActivity {
         btnEmergencia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // El número de emergencia
                 String numeroEmergencia = "911";
 
-                // Crea un Intent con la acción ACTION_DIAL
-                // La URI "tel:911" indica que el sistema debe abrir el marcador con el número 911.
+
                 Intent intentLlamada = new Intent(Intent.ACTION_DIAL);
                 intentLlamada.setData(Uri.parse("tel:" + numeroEmergencia));
 
-                // Inicia la actividad
+
                 startActivity(intentLlamada);
             }
         });
 
-        // --- INICIO DE LISTENERS EXISTENTES ---
 
-        // Se usa la imagen de la sirena para que también funcione al darle clic a la imagen.
         ImageView iconSirena = findViewById(R.id.icon_sirena);
         iconSirena.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,12 +58,10 @@ public class HomeActivity extends AppCompatActivity {
                 // El número de emergencia
                 String numeroEmergencia = "911";
 
-                // Crea un Intent con la acción ACTION_DIAL
-                // La URI "tel:911" indica que el sistema debe abrir el marcador con el número 911.
+
                 Intent intentLlamada = new Intent(Intent.ACTION_DIAL);
                 intentLlamada.setData(Uri.parse("tel:" + numeroEmergencia));
 
-                // Inicia la actividad
                 startActivity(intentLlamada);
             }
         });
